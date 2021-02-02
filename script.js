@@ -96,6 +96,8 @@ function createUI(array) {
   if (array.length) {
     array.forEach((element) => {
       let li = document.createElement("li");
+      let anchor = document.createElement("a");
+      anchor.href = "product.html";
       li.classList.add("lists");
       let heading = document.createElement("h2");
       let p = document.createElement("p");
@@ -108,7 +110,8 @@ function createUI(array) {
       heading.innerText = element.productName;
       span.innerText = `Price:${element.price}`;
       p.innerText = element.category;
-      li.append(imgDiv, heading, span);
+      anchor.append(imgDiv, heading, span);
+      li.append(anchor);
       root.append(li);
     });
   } else {
