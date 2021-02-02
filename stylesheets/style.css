@@ -7,20 +7,34 @@
   margin-top: 2rem;
 }
 
-img {
-  width: 100px;
+.imgDiv {
+  width: 75px;
   height: 100px;
-  display: inline-block;
+  margin: 0 auto;
+}
+
+.imgDiv img {
+  width: 100%;
+  height: 100%;
+}
+
+i {
+  color: black;
 }
 
 .lists {
   -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
 }
 
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .container {
@@ -148,6 +162,7 @@ section {
 
 body {
   line-height: 1;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 ol,

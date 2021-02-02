@@ -6,7 +6,7 @@ products = [
     img:
       "https://images-na.ssl-images-amazon.com/images/I/616bhfyXimL._SL1500_.jpg",
     price: 1999,
-    category: "Earphones",
+    category: "electronics",
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ products = [
     img:
       "https://images-na.ssl-images-amazon.com/images/I/81RfhJpIjAL._SL1500_.jpg",
     price: 12999,
-    category: "Mobile",
+    category: "electronics",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ products = [
     img:
       "https://images-na.ssl-images-amazon.com/images/I/815Fh00eWDL._UX679_.jpg",
     price: 1999,
-    category: "Kurta",
+    category: "Kurti",
   },
   {
     id: 4,
@@ -77,7 +77,7 @@ products = [
     img:
       "https://images-na.ssl-images-amazon.com/images/I/51T8OXMiB5L._SX356_BO1,204,203,200_.jpg",
     price: 306,
-    category: "Book",
+    category: "books",
   },
   {
     id: 10,
@@ -98,6 +98,7 @@ products.forEach((element) => {
   let p = document.createElement("p");
   let span = document.createElement("span");
   let imgDiv = document.createElement("div");
+  imgDiv.classList.add("imgDiv");
   let img = document.createElement("img");
   img.src = element.img;
   imgDiv.append(img);
@@ -107,3 +108,16 @@ products.forEach((element) => {
   li.append(imgDiv, heading, span);
   root.append(li);
 });
+
+let categories = document.getElementById("categories");
+
+function handleCategory(event) {
+  let filteredProducts = products.filter(
+    (v) => v.category === event.target.value
+  );
+
+  console.log(filteredProducts);
+  // console.log(event.target.value);
+}
+
+categories.addEventListener("change", handleCategory);
