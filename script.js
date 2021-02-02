@@ -98,6 +98,7 @@ products.forEach((element) => {
   let p = document.createElement("p");
   let span = document.createElement("span");
   let imgDiv = document.createElement("div");
+  imgDiv.classList.add("imgDiv");
   let img = document.createElement("img");
   img.src = element.img;
   imgDiv.append(img);
@@ -111,7 +112,12 @@ products.forEach((element) => {
 let categories = document.getElementById("categories");
 
 function handleCategory(event) {
-  console.log(event);
+  let filteredProducts = products.filter(
+    (v) => v.category === event.target.value
+  );
+
+  console.log(filteredProducts);
+  // console.log(event.target.value);
 }
 
-categories.addEventListener("keyup", handleCategory);
+categories.addEventListener("change", handleCategory);

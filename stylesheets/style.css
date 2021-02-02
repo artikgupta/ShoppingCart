@@ -7,10 +7,15 @@
   margin-top: 2rem;
 }
 
-img {
-  width: 100px;
+.imgDiv {
+  width: 75px;
   height: 100px;
-  display: inline-block;
+  margin: 0 auto;
+}
+
+.imgDiv img {
+  width: 100%;
+  height: 100%;
 }
 
 i {
@@ -26,6 +31,10 @@ i {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .container {
@@ -153,6 +162,7 @@ section {
 
 body {
   line-height: 1;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 ol,
