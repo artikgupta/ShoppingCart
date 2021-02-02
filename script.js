@@ -108,9 +108,14 @@ function createUI(array) {
       img.src = element.img;
       imgDiv.append(img);
       heading.innerText = element.productName;
-      span.innerText = `Price:${element.price}`;
       p.innerText = element.category;
-      anchor.append(imgDiv, heading, span);
+      let flex = document.createElement("div");
+      flex.classList.add("flex");
+      span.innerText = `Price:${element.price}`;
+      let cartIcon = document.createElement("a");
+      cartIcon.innerHTML = '<i class="fas fa-cart-plus"></i>';
+      flex.append(span, cartIcon);
+      anchor.append(imgDiv, heading, flex);
       li.append(anchor);
       root.append(li);
     });
