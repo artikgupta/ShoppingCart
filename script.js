@@ -91,33 +91,43 @@ products = [
 
 let root = document.querySelector(".root");
 
-products.forEach((element) => {
-  let li = document.createElement("li");
-  li.classList.add("lists");
-  let heading = document.createElement("h2");
-  let p = document.createElement("p");
-  let span = document.createElement("span");
-  let imgDiv = document.createElement("div");
-  imgDiv.classList.add("imgDiv");
-  let img = document.createElement("img");
-  img.src = element.img;
-  imgDiv.append(img);
-  heading.innerText = element.productName;
-  span.innerText = `Price:${element.price}`;
-  p.innerText = element.category;
-  li.append(imgDiv, heading, span);
-  root.append(li);
-});
+function createUI(array) {
+  root.innerHTML = "";
+  if (array.length) {
+    array.forEach((element) => {
+      let li = document.createElement("li");
+      li.classList.add("lists");
+      let heading = document.createElement("h2");
+      let p = document.createElement("p");
+      let span = document.createElement("span");
+      let imgDiv = document.createElement("div");
+      imgDiv.classList.add("imgDiv");
+      let img = document.createElement("img");
+      img.src = element.img;
+      imgDiv.append(img);
+      heading.innerText = element.productName;
+      span.innerText = `Price:${element.price}`;
+      p.innerText = element.category;
+      li.append(imgDiv, heading, span);
+      root.append(li);
+    });
+  } else {
+    alert("No products are available");
+  }
+}
 
 let categories = document.getElementById("categories");
 
 function handleCategory(event) {
-  let filteredProducts = products.filter(
-    (v) => v.category === event.target.value
-  );
-
-  console.log(filteredProducts);
-  // console.log(event.target.value);
+  const { value } = event.target;
+  if (value === "allProducts") {
+    createUI(products);
+  } else {
+    let filteredProducts = products.filter((v) => v.category === value);
+    createUI(filteredProducts);
+  }
 }
 
 categories.addEventListener("change", handleCategory);
+
+createUI(products);
