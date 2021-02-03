@@ -89,53 +89,27 @@ products = [
   },
 ];
 
-let root = document.querySelector(".root");
-
-function createUI(array) {
-  root.innerHTML = "";
-  if (array.length) {
-    array.forEach((element) => {
-      let li = document.createElement("li");
-      let anchor = document.createElement("a");
-      anchor.href = `product.html?id=${element.id}`;
-      li.classList.add("lists");
-      let heading = document.createElement("h2");
-      let p = document.createElement("p");
-      let span = document.createElement("span");
-      let imgDiv = document.createElement("div");
-      imgDiv.classList.add("imgDiv");
-      let img = document.createElement("img");
-      img.src = element.img;
-      imgDiv.append(img);
-      heading.innerText = element.productName;
-      p.innerText = element.category;
-      let flex = document.createElement("div");
-      flex.classList.add("flex");
-      span.innerText = `Price:${element.price}`;
-      let cartIcon = document.createElement("a");
-      cartIcon.innerHTML = '<i class="fas fa-cart-plus"></i>';
-      flex.append(span, cartIcon);
-      anchor.append(imgDiv, heading, flex);
-      li.append(anchor);
-      root.append(li);
-    });
-  } else {
-    alert("No products are available");
-  }
+function getProduct() {
+  const id = window.location.search
+    .split("")
+    .filter((v) => Number(v))
+    .join(""); //returns a  string
+  console.log(id);
+  const product = products.find((val) => val.id == id); // returns an object
+  return product;
 }
 
-let categories = document.getElementById("categories");
+(function createUI() {
+  const product = getProduct();
+  document.getElementById("name").innerHTML = product.productName;
+  document.getElementById("productImg").setAttribute("src", product.img);
+  document.getElementById("price").innerHTML = `Price:${product.price}`;
+})();
 
-function handleCategory(event) {
-  const { value } = event.target;
-  if (value === "allProducts") {
-    createUI(products);
-  } else {
-    let filteredProducts = products.filter((v) => v.category === value);
-    createUI(filteredProducts);
-  }
-}
+let cartIcon = document.querySelector(".icon");
 
-categories.addEventListener("change", handleCategory);
-
-createUI(products);
+cartIcon.addEventListener("click", () => {
+  const product = getProduct();
+  alert("Your product has been added to the cart");
+  console.log(product);
+});
