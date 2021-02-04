@@ -1,3 +1,8 @@
+header {
+  -webkit-box-shadow: 5px 6px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 6px 4px rgba(0, 0, 0, 0.3);
+}
+
 header .flex {
   padding: 1.6rem 0;
 }
@@ -12,8 +17,30 @@ header .search-box {
           justify-content: space-between;
 }
 
-header input {
-  width: 92%;
+header .search-box input {
+  width: 100%;
+  height: 42px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-right: none;
+  border-radius: 0 8px;
+}
+
+header .search-box button {
+  background-color: orangered;
+  border: 0;
+  outline: 0;
+  padding: 0 1rem;
+  margin-left: -10px;
+  border-radius: 0 8px;
+}
+
+header i {
+  font-size: 1.2rem;
+}
+
+.heading {
+  margin: 1.5rem 0;
+  font-weight: bold;
 }
 
 .root {
@@ -22,7 +49,6 @@ header input {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  margin-top: 2rem;
 }
 
 .imgDiv {
@@ -42,9 +68,20 @@ i {
   color: black;
 }
 
+.card {
+  position: relative;
+}
+
+.card .arrow {
+  position: absolute;
+  left: 3%;
+  top: 10%;
+  color: #9a348e;
+}
+
 .lists {
-  -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
   padding: 2rem;
   border-radius: 5px;
 }
@@ -61,6 +98,8 @@ i {
 
 .lists i {
   font-size: 1.5rem;
+  background-color: gold;
+  padding: 8px;
 }
 
 .img-box {
@@ -88,6 +127,181 @@ i {
 
 .card i {
   font-size: 1.6rem;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+select {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 20px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -moz-padding-start: 2px;
+  background-color: #e9e6e6;
+  /* Fallback color if gradients are not supported */
+  /* For Chrome and Safari */
+  /* For old Firefox (3.6 to 15) */
+  /* For pre-releases of Internet Explorer  10*/
+  /* For old Opera (11.1 to 12.0) */
+  background-image: url(../images/select-arrow.png), -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#f4f4f4));
+  background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #e5e5e5, #f4f4f4);
+  /* Standard syntax; must be last */
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mySlides {
+  text-align: center;
+  height: 20rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.mySlides img {
+  height: 100%;
 }
 
 * {
@@ -125,6 +339,46 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer {
+  background-color: #343a40;
+}
+
+footer h3 {
+  color: #b4b4b5;
+  font-weight: 700;
+}
+
+footer li {
+  margin: 1rem 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #898b8e;
+  margin-right: 1rem;
+}
+
+footer .footer-icons {
+  margin: 1rem 0;
+}
+
+.flex-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-footer li span {
+  padding-right: 8px;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 

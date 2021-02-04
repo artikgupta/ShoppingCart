@@ -26,4 +26,34 @@ body {
 .flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  background-color: #343a40;
+  h3 {
+    color: #b4b4b5;
+    font-weight: 700;
+  }
+  li {
+    margin: 1rem 0;
+  }
+  a {
+    text-decoration: none;
+    color: #898b8e;
+    margin-right: 1rem;
+  }
+
+  .footer-icons {
+    margin: 1rem 0;
+  }
+}
+
+.flex-footer {
+  display: flex;
+  padding: 2rem 0;
+  justify-content: space-between;
+  li span {
+    padding-right: 8px;
+  }
 }
